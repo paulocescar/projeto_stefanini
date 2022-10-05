@@ -1,0 +1,40 @@
+@media only screen and (min-width: 1024px) {
+    .screen1024 {
+        max-width: 50vw; display: block; margin: 0 auto;
+    }
+    .w100{
+        width: 30vw;
+    }
+}
+@media only screen and (max-width: 1023px) {
+    .screen1024 {
+        max-width: 90vw; display: block; margin: 10px auto;
+    }
+    .w100{
+        width: 40vw;
+    }
+}
+.row{
+    width: 100% !important;
+    display: flex;
+    flex-wrap: wrap;
+}
+.icon{
+    margin-bottom: -7px!important; 
+    padding-right:8px;
+}
+.btn-bottom{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-right{
+    float: right!important;
+}
+.btn-center{
+    align-self: center;
+}
+.p10{
+    padding: 10px !important;
+}

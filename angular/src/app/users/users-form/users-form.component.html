@@ -1,0 +1,73 @@
+<div class="screen1024">
+   <h1>{{ title }}</h1>
+
+   <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+      <div class="row">
+         <div class="p10">
+            <mat-form-field>
+               <input matInput placeholder="Usuário (apelido)" [(ngModel)]="usuario.username" required
+                  name="username">
+               <mat-error >Porfavor digite um Usuário (apelido)</mat-error>
+            </mat-form-field>
+         </div>
+         <div class="p10">
+            <mat-form-field>
+               <input matInput placeholder="Primeiro nome" [(ngModel)]="usuario.firstName" required
+                  name="firstName">
+               <mat-error >Porfavor digite um primeiro nome</mat-error>
+            </mat-form-field>
+         </div>
+         <div class="p10">
+            <mat-form-field>
+               <input matInput placeholder="Sobrenome" [(ngModel)]="usuario.lastName" required
+                  name="lastName">
+               <mat-error >Porfavor digite um sobrenome</mat-error>
+            </mat-form-field>
+         </div>
+         <div class="p10">
+            <mat-form-field>
+               <input matInput type="email" placeholder="E-mail" [(ngModel)]="usuario.email" required 
+                  name="email" [value]="usuario.email">
+                  <mat-icon matPrefix class="icon">email</mat-icon>
+                  <mat-error >Porfavor escolha um endereço</mat-error>
+            </mat-form-field> 
+         </div>
+
+      </div>
+
+      <div class="row">
+         <div class="p10">
+            <mat-form-field>
+               <input matInput type="password" placeholder="Senha" [(ngModel)]="usuario.password" required 
+                  name="password">
+                  <mat-icon matPrefix class="icon">password</mat-icon>
+                  <mat-error >Porfavor digite uma senha</mat-error>
+            </mat-form-field> 
+         </div>
+         
+         <div class="p10">
+               <mat-form-field class="w100">
+                  <mat-label>Endereço</mat-label>
+                  <mat-select name="address_id" required [(ngModel)]="usuario.address_id">
+                  <mat-option *ngFor="let address of addresses"  [value]="address.id"> 
+                     {{address.zipcode}}, {{address.street}}, {{address.district}}, {{address.city}}, {{address.state}}, {{address.country}}
+                  </mat-option>
+                  </mat-select>
+                  <mat-error >Porfavor escolha um endereço</mat-error>
+               </mat-form-field>
+            </div>
+      </div>
+
+      
+      <mat-toolbar class="form-actions">
+         <mat-toolbar-row class="form-actions">
+            <div class="btn-bottom">
+               <button mat-raised-button type="submit" color="accent">Salvar</button>
+               <button mat-raised-button type="button" (click)="voltar(f)">Voltar</button>
+            </div>
+         </mat-toolbar-row>
+      </mat-toolbar>
+
+   </form> 
+</div>

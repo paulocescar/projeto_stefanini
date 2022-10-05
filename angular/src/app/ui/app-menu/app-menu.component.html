@@ -1,0 +1,6 @@
+<button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+ </button>
+ <mat-menu #menu="matMenu">
+   <a mat-menu-item [routerLink]="['/users']">Usuários</a>
+ </mat-menu>
